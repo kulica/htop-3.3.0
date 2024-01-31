@@ -1,9 +1,8 @@
 Source: htop
 Section: utils
 Priority: optional
-Maintainer: Daniel Lange <DLange@debian.org>
-Uploaders: Eugene V. Lyubimkin <jackyf@debian.org>,
-           Graham Inggs <ginggs@debian.org>
+Maintainer: Matej Kseneman <matej.kseneman@gmail.com>
+Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 13),
                dpkg-dev (>= 1.16.1.1),
                libdevstat-dev [kfreebsd-any],
@@ -16,15 +15,16 @@ Build-Depends: debhelper-compat (= 13),
                libsensors-dev [!hurd-any],
                pkg-config
 Standards-Version: 4.6.2
-Rules-Requires-Root: no
 Homepage: https://htop.dev/
 Vcs-Browser: https://salsa.debian.org/debian/htop
 Vcs-Git: https://salsa.debian.org/debian/htop.git
 
 Package: htop
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Suggests: lm-sensors, lsof, strace
+Multi-Arch: foreign
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
 Description: interactive processes viewer
  Htop is an ncursed-based process viewer similar to top, but it
  allows one to scroll the list vertically and horizontally to see
@@ -32,3 +32,4 @@ Description: interactive processes viewer
  .
  Tasks related to processes (killing, renicing) can be done without
  entering their PIDs.
+ I was here!!!
